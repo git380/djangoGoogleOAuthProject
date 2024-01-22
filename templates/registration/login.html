@@ -1,10 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h2>ソーシャルサービスを選択してログイン</h2>
-  <ul>
-    <li><a href="{% url 'social:begin' 'google-oauth2' %}">Googleでログイン</a></li>
-  </ul>
-
+    <script>
+        // ページが読み込まれたら、自動的に遷移する
+        window.location.href = '{% url 'social:begin' 'google-oauth2' %}';
+    </script>
 {% endblock %}
