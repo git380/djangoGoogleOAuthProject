@@ -11,6 +11,7 @@
         <p>email : {{ user.email }}</p>
         <p>backends: {{ backends }}</p>
     {% endif %}
+    <a href="{% url 'test_page' %}">テストページ</a>
     <form action="{% url 'logout' %}" method="post" name="f_logout">
         {% csrf_token %}
         <input type="hidden" value="logout">

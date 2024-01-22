@@ -14,3 +14,10 @@ def home(request):
             print(f"{attr}: [アクセス不可]")
     # HTML
     return render(request, 'home.html')
+
+
+@login_required
+def test_page(request):
+    # ユーザ名取得
+    print(f"Current user: {request.user.username}")
+    return render(request, 'test_page.html')

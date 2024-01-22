@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <input type="hidden" id="idInput" value="{{ user.username }}">
+        <input type="hidden" id="name" value="{{ user.last_name }} {{ user.first_name }}">
+
+        <!-- ボタンを追加 -->
+        <button onclick="displayValues()">値を表示</button>
+
+        <!-- 結果を表示するための要素 -->
+        <div id="id"></div>
+        <div id="names"></div>
+
+        <script>
+            function displayValues() {
+                document.getElementById("id").textContent = "idInputの値: " + document.getElementById("idInput").value;
+                document.getElementById("names").textContent = "nameの値: " + document.getElementById("name").value;
+            }
+        </script>
+    {% endif %}
+{% endblock %}
